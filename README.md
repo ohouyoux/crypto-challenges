@@ -1,9 +1,9 @@
 The Matasano crypto challenges are 48 exercises that demonstrate attacks on real world ciphers and protocols.<br> Exercises exploit both badly designed systems and subtle implementation bugs in theoretically rock solid crypto.
 <br><br>
 This repository contains my solutions to those exercises.
-<br>
+<br><br>
 Quick links to solutions:
-<br>
+<br><br>
 1.1 Convert hex to base64<br>
 1.2 Fixed XOR<br>
 1.3 Single-byte XOR cipher<br>
