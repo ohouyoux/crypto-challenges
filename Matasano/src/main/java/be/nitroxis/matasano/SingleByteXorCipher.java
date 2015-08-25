@@ -17,7 +17,7 @@ public class SingleByteXorCipher implements Cipher<String, String> {
         String decrypted = "";
         byte[] encrypted = new Hex().decode(hex.toCharArray());
         Xor xor = new Xor();
-        Score score = new Score();
+        Score<byte[]> score = new ByteScore();
         int result = 0;
 
         for (char c = 0; c < 255; c++) {
