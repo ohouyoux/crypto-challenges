@@ -1,7 +1,7 @@
 package be.nitroxis.matasano;
 
 /**
- * Scores a piece of data trying to .
+ * Scores a piece of data made of bytes.
  *
  * @author Olivier Houyoux
  */
