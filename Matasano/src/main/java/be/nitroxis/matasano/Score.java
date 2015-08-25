@@ -14,5 +14,5 @@ public interface Score<T> {
      * @param data the data to score
      * @return the score
      */
-    int getScore(byte[] data);
+    int getScore(T data);
 }
