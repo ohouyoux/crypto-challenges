@@ -17,7 +17,7 @@ public class Base64 {
      * @return the Base64 {@code String}
      * @see https://en.wikipedia.org/wiki/Hexadecimal
      */
-    public String hexToBase64(final String hex) {
+    public static String hexToBase64(final String hex) {
         char[] characters = hex.toCharArray();
         byte[] data = new Hex().decode(characters);
 
@@ -25,5 +25,9 @@ public class Base64 {
         BASE64Encoder encoder = new BASE64Encoder();
 
         return encoder.encode(data);
+    }
+
+    private Base64() {
+      // Does nothing
     }
 }
