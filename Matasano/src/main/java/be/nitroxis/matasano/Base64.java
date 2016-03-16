@@ -17,7 +17,7 @@ public class Base64 {
      * @return the Base64 {@code String}
      * @see https://en.wikipedia.org/wiki/Hexadecimal
      */
-    public String toHex(final String hex) {
+    public String hexToBase64(final String hex) {
         char[] characters = hex.toCharArray();
         byte[] data = new Hex().decode(characters);
 
