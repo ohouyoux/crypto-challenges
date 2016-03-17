@@ -8,7 +8,7 @@ import sun.misc.BASE64Encoder;
  * @author Olivier Houyoux
  * @see https://en.wikipedia.org/wiki/Base64
  */
-public class Base64 {
+public final class Base64 {
 
     /**
      * Converts an hexadecimal {@code String} into it's Base64 representation.
