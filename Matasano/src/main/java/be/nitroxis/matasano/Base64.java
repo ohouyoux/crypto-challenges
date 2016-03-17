@@ -19,7 +19,7 @@ public final class Base64 {
      */
     public static String hexToBase64(final String hex) {
         char[] characters = hex.toCharArray();
-        byte[] data = new Hex().decode(characters);
+        byte[] data = Hex.decode(characters);
 
         // TODO use java.util.Base64 from Java 8
         BASE64Encoder encoder = new BASE64Encoder();

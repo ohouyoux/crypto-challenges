@@ -15,7 +15,7 @@ public class SingleByteXorCipher implements Cipher<String, String> {
     @Override
     public String decrypt(final String hex) {
         String decrypted = "";
-        byte[] encrypted = new Hex().decode(hex.toCharArray());
+        byte[] encrypted = Hex.decode(hex.toCharArray());
         Xor xor = new Xor();
         Score<byte[]> score = new ByteScore();
         int result = 0;

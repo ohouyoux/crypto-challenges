@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
  *
  * @author Olivier Houyoux
  */
-public class Hex {
+public final class Hex {
 
     private static final char[] DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7',
@@ -20,7 +20,7 @@ public class Hex {
      * @param data an array of characters containing hexadecimal digits
      * @return A byte array containing binary data decoded from the supplied char array
      */
-    public byte[] decode(final char[] data) {
+    public static byte[] decode(final char[] data) {
         Preconditions.checkArgument(data.length % 2 == 0, "Odd number of characters");
 
         // Returned array will be half the length of the passed array, as it takes two characters to represent any
@@ -41,7 +41,7 @@ public class Hex {
         return out;
     }
 
-    private int toDigit(final char ch) {
+    private static int toDigit(final char ch) {
         int digit = Character.digit(ch, 16);
 
         if (digit == -1) {
@@ -57,7 +57,7 @@ public class Hex {
      * @param data the array of bytes to convert to hexadecimal characters
      * @return the array of characters containing hexadecimal values
      */
-    public char[] encode(final byte[] data) {
+    public static char[] encode(final byte[] data) {
         // Returned array will be twice the length of the passed array, as it takes two characters to represent any
         // given byte
         char[] out = new char[data.length << 1];
@@ -72,5 +72,9 @@ public class Hex {
         }
 
         return out;
+    }
+
+    private Hex() {
+      // Does nothing
     }
 }
