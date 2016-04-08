@@ -9,6 +9,21 @@ package be.nitroxis.matasano;
 public final class Xor {
 
     /**
+     * Applies the exclusive disjunction function to the given {@code String}s.
+     *
+     * @param first the first {@code String}
+     * @param second the second {@code String} used in the function
+     * @return the result of the exclusive disjunction function
+     */
+    public static String apply(final String first, final String second) {
+      byte[] data1 = Hex.decode(first.toCharArray());
+      byte[] data2 = Hex.decode(second.toCharArray());
+      char[] result = Hex.encode(apply(data1, data2));
+
+      return new String(result);
+    }
+
+    /**
      * Applies the exclusive disjunction function to the given byte arrays.
      *
      * @param first the first byte array
