@@ -16,13 +16,12 @@ public class SingleByteXorCipher implements Cipher<String, String> {
     public String decrypt(final String hex) {
         String decrypted = "";
         byte[] encrypted = Hex.decode(hex.toCharArray());
-        Xor xor = new Xor();
         Score<byte[]> score = new ByteScore();
         int result = 0;
 
         for (char c = 0; c < 255; c++) {
             byte[] guess = new byte[] { (byte) c, };
-            byte[] decoded = xor.apply(encrypted, guess);
+            byte[] decoded = Xor.apply(encrypted, guess);
             int currentScore = score.getScore(decoded);
 
             if (currentScore > result) {

@@ -6,7 +6,7 @@ package be.nitroxis.matasano;
  * @author Olivier Houyoux
  * @see https://en.wikipedia.org/wiki/Exclusive_or
  */
-public class Xor {
+public final class Xor {
 
     /**
      * Applies the exclusive disjunction function to the given byte arrays.
@@ -15,7 +15,7 @@ public class Xor {
      * @param second the second byte array used in the function
      * @return the result of the exclusive disjunction function
      */
-    public byte[] apply(final byte[] first, final byte[] second) {
+    public static byte[] apply(final byte[] first, final byte[] second) {
         int size = Math.max(first.length, second.length);
         byte[] result = new byte[size];
         boolean firstArgShorter = first.length < second.length;
@@ -27,5 +27,9 @@ public class Xor {
         }
 
         return result;
+    }
+
+    private Xor() {
+      // Does nothing
     }
 }
