@@ -16,13 +16,27 @@ class Xor {
      * @return the result of the exclusive disjunction function
      */
     static String apply(String s1, String s2) {
-        def shorter = s1.size() < s2.size() ? s1.decodeHex() : s2.decodeHex();
-        def longer = s1.size() < s2.size() ? s2.decodeHex() : s1.decodeHex();
+        def b1 = s1.decodeHex()
+        def b2 = s2.decodeHex()
+        
+        apply(b1, b2).encodeHex()
+    }
+
+    /**
+     * Applies the exclusive disjunction function to the given arrays of bytes.
+     *
+     * @param b1 the first array of bytes
+     * @param b2 the second array of bytes used in the function
+     * @return the result of the exclusive disjunction function
+     */
+    static byte[] apply(byte[] b1, byte[] b2) {
+        def shorter = b1.length < b2.length ? b1 : b2;
+        def longer = b1.length < b2.length ? b2 : b1;
         def result = new byte[longer.length];
         longer.eachWithIndex() {
           v, i -> result[i] = v ^ shorter.getAt(i % shorter.length)
         }
 
-        result.encodeHex()
+        result
     }
 }
