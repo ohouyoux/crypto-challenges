@@ -8,7 +8,7 @@ package be.nitroxis.matasano;
 public class SingleByteXorCipher implements Cipher<String, String> {
 
     @Override
-    public void encrypt(final String raw) {
+    public String encrypt(final String raw) {
         throw new UnsupportedOperationException("Not supported yet");
     }
 
