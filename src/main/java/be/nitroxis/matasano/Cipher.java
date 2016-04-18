@@ -13,8 +13,9 @@ public interface Cipher<R, E> {
      * Encrypts a message.
      *
      * @param raw the message to be encrypted
+     * @return the encrypted message
      */
-    void encrypt(R raw);
+    E encrypt(R raw);
 
     /**
      * Decrypts a message.
